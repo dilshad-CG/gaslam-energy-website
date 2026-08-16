@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: "Space Grotesk", system-ui, sans-serif;
+    --font-sans: "Inter", system-ui, sans-serif;
+    --hairline-dark: rgba(244, 241, 235, 0.12);
+    --hairline-light: #e5e0d5;
+  }
+
+  * {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bone text-ink font-sans antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: #f5a524;
+    color: #0c0f14;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+    text-wrap: balance;
+  }
+
+  /* Visible, brand-consistent focus states */
+  :focus-visible {
+    outline: 2px solid #f5a524;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply text-eyebrow uppercase font-display font-semibold text-amber-deep;
+  }
+  .eyebrow-light {
+    @apply text-eyebrow uppercase font-display font-semibold text-amber;
+  }
+
+  /* Thin uppercase data label */
+  .data-label {
+    @apply font-display uppercase tracking-[0.18em] text-caption;
+  }
+
+  /* Hairline rule used across sections */
+  .rule-dark {
+    border-color: var(--hairline-dark);
+  }
+  .rule-light {
+    border-color: var(--hairline-light);
+  }
+
+  /* Blueprint grid backdrop for dark sections */
+  .grid-lines {
+    background-image:
+      linear-gradient(var(--hairline-dark) 1px, transparent 1px),
+      linear-gradient(90deg, var(--hairline-dark) 1px, transparent 1px);
+    background-size: 72px 72px;
+  }
+
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1.5px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .link-underline:hover {
+    background-size: 100% 1.5px;
+  }
+}
+
+/* Respect reduced-motion globally as a safety net */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
