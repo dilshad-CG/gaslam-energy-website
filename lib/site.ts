@@ -196,6 +196,7 @@ const asset = (p: string) => `${deploy.basePath}${p}`;
 
 export const brand = {
   icon: asset("/brand/gaslam-icon.png"),
+  iconSvg: asset("/brand/gaslam-icon.svg"),
   logoFull: asset("/brand/gaslam-logo-full.png"),
 };
 

@@ -29,19 +29,19 @@ const config: Config = {
         // Light surfaces
         bone: "#F4F1EB",
         paper: "#FBFAF8",
-        // Energy accent
+        // Energy accent — the Gas'Lam bolt (amber/orange)
         amber: {
           DEFAULT: "#F5A524",
           bright: "#FFB93D",
-          deep: "#C57C10",
+          deep: "#C06A11", // orange-leaning, AA on light
         },
-        // Brand secondary (from the Gas'Lam identity)
-        navy: {
-          DEFAULT: "#16305C",
-          deep: "#0F2140",
+        // Brand secondary — the Gas'Lam flame (leaf green)
+        green: {
+          DEFAULT: "#2F9E44",
+          bright: "#5FB83A",
+          deep: "#0E5A31", // dark forest, for panels
+          ink: "#0A3F22", // deepest, near-black green
         },
-        // Green — logo whisper only, used sparingly
-        moss: "#2E8B57",
       },
       fontFamily: {
         display: ["var(--font-display)", "system-ui", "sans-serif"],

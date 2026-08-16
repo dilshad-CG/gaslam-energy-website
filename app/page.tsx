@@ -124,6 +124,7 @@ function DivisionsSection() {
             href="/generator-services"
             image={images.fleet}
             imageAlt="Electrical power infrastructure"
+            accent="amber"
           />
           <DivisionBlock
             eyebrow={lubricantsServices.eyebrow}
@@ -133,6 +134,7 @@ function DivisionsSection() {
             href="/lubricants-filtration"
             image={images.lubricants}
             imageAlt="Oil sampling and condition monitoring in a lab"
+            accent="green"
           />
         </div>
       </Container>
@@ -148,6 +150,7 @@ function DivisionBlock({
   href,
   image,
   imageAlt,
+  accent,
 }: {
   eyebrow: string;
   title: string;
@@ -156,24 +159,28 @@ function DivisionBlock({
   href: string;
   image: string;
   imageAlt: string;
+  accent: "amber" | "green";
 }) {
+  const dot = accent === "green" ? "bg-green-bright" : "bg-amber";
+  const eye = accent === "green" ? "text-green-bright" : "text-amber";
+  const link = accent === "green" ? "text-green-bright" : "text-amber";
   return (
     <Reveal className="group flex flex-col overflow-hidden rounded-card border border-white/10 bg-ink">
       <ImageReveal src={image} alt={imageAlt} className="aspect-[16/10]" overlay parallax={false} />
       <div className="flex flex-1 flex-col p-8">
-        <span className="eyebrow-light">{eyebrow}</span>
+        <span className={`text-eyebrow font-display font-semibold uppercase ${eye}`}>{eyebrow}</span>
         <h3 className="mt-4 text-h2 text-bone">{title}</h3>
         <p className="mt-4 text-body text-bone/60">{body}</p>
         <ul className="mt-6 space-y-2">
           {meta.map((m) => (
             <li key={m} className="flex items-center gap-3 text-small text-bone/75">
-              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-amber" aria-hidden />
+              <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${dot}`} aria-hidden />
               {m}
             </li>
           ))}
         </ul>
         <div className="mt-8 pt-2">
-          <Button href={href} variant="ghost" className="!px-0 text-amber">
+          <Button href={href} variant="ghost" className={`!px-0 ${link}`}>
             Explore {title}
           </Button>
         </div>
@@ -271,7 +278,7 @@ function SafetyScaleSection() {
             </div>
           </div>
 
-          <div className="relative overflow-hidden rounded-card border border-white/10 bg-navy-deep p-8 lg:p-10">
+          <div className="relative overflow-hidden rounded-card border border-white/10 bg-green-deep p-8 lg:p-10">
             <div className="relative">
               <Eyebrow tone="dark" className="mb-6">National capability</Eyebrow>
               <h2 className="text-h2 uppercase text-bone">Local expertise. National reach.</h2>

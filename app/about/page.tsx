@@ -63,7 +63,7 @@ export default function AboutPage() {
                 {site.mission}
               </p>
             </Reveal>
-            <Reveal delay={0.1} className="rounded-card border border-white/10 bg-navy-deep p-8 lg:p-10">
+            <Reveal delay={0.1} className="rounded-card border border-white/10 bg-green-deep p-8 lg:p-10">
               <Eyebrow tone="dark" className="mb-6">Vision</Eyebrow>
               <p className="font-display text-[1.6rem] font-medium leading-snug text-bone">
                 {site.vision}

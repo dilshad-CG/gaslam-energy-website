@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { brand } from "@/lib/site";
 
 /**
@@ -23,12 +22,12 @@ export function Logo({
       aria-label="Gas'Lam Energy Group — home"
       className={`group inline-flex items-center gap-2.5 ${className}`}
     >
-      <Image
-        src={brand.icon}
+      {/* Vector mark — crisp at any size. eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={brand.iconSvg}
         alt=""
-        width={184}
-        height={129}
-        priority
+        width={51}
+        height={36}
         className="h-9 w-auto transition-transform duration-500 ease-out-expo group-hover:scale-[1.05]"
       />
       <span className="flex flex-col leading-none">
