@@ -22,7 +22,7 @@ export function Eyebrow({
 }) {
   return (
     <div className={`flex items-center gap-3 ${className}`}>
-      <span className="h-px w-8 bg-amber" aria-hidden />
+      <span className="h-px w-8 bg-accent" aria-hidden />
       <span className={tone === "dark" ? "eyebrow-light" : "eyebrow"}>{children}</span>
     </div>
   );

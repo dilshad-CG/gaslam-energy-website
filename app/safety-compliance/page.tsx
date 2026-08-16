@@ -35,7 +35,7 @@ export default function SafetyCompliancePage() {
               { k: "Quality", v: "ISO-aligned procedures with sign-off at each step." },
             ].map((s) => (
               <Reveal key={s.k}>
-                <span className="data-label text-amber-deep">{s.k}</span>
+                <span className="data-label text-accent-deep">{s.k}</span>
                 <p className="mt-3 text-body text-slate">{s.v}</p>
               </Reveal>
             ))}

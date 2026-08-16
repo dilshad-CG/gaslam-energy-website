@@ -26,13 +26,13 @@ export default function ContactPage() {
             {/* Details */}
             <div className="flex flex-col gap-10">
               <Reveal>
-                <span className="data-label text-amber-deep">Head office</span>
+                <span className="data-label text-accent-deep">Head office</span>
                 <p className="mt-3 font-display text-h3 text-ink">{site.hq.line}</p>
                 <p className="mt-1 text-body text-slate">{site.hq.city}, {site.hq.province}, South Africa</p>
               </Reveal>
 
               <Reveal delay={0.08}>
-                <span className="data-label text-amber-deep">Phone</span>
+                <span className="data-label text-accent-deep">Phone</span>
                 <p className="mt-3">
                   <a href={site.phoneHref} className="link-underline font-display text-h3 text-ink">
                     {site.phone}
@@ -52,7 +52,7 @@ export default function ContactPage() {
               </Reveal>
 
               <Reveal delay={0.12}>
-                <span className="data-label text-amber-deep">Online</span>
+                <span className="data-label text-accent-deep">Online</span>
                 <p className="mt-3">
                   <a href={site.url} className="link-underline font-display text-h3 text-ink">
                     {site.domain}
@@ -61,7 +61,7 @@ export default function ContactPage() {
               </Reveal>
 
               <Reveal delay={0.15}>
-                <span className="data-label text-amber-deep">Coverage</span>
+                <span className="data-label text-accent-deep">Coverage</span>
                 <p className="mt-3 max-w-sm text-body text-slate">
                   Randburg head office with a national partner network. Rapid response of 1–4
                   hours across Gauteng.

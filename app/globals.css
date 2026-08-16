@@ -8,6 +8,18 @@
     --font-sans: "Inter", system-ui, sans-serif;
     --hairline-dark: rgba(244, 241, 235, 0.12);
     --hairline-light: #e5e0d5;
+
+    /* Themeable accent (RGB channels). Default = Gas'Lam amber bolt. */
+    --accent: 245 165 36; /* #F5A524 */
+    --accent-bright: 255 185 61; /* #FFB93D */
+    --accent-deep: 192 106 17; /* #C06A11 — AA on light */
+  }
+
+  /* Green theme — the flame. Applied per-page (e.g. Lubricants & Filtration). */
+  .theme-green {
+    --accent: 47 158 68; /* #2F9E44 */
+    --accent-bright: 95 184 58; /* #5FB83A */
+    --accent-deep: 14 90 49; /* #0E5A31 — AA on light */
   }
 
   * {
@@ -25,7 +37,7 @@
   }
 
   ::selection {
-    background: #f5a524;
+    background: rgb(var(--accent));
     color: #0c0f14;
   }
 
@@ -36,7 +48,7 @@
 
   /* Visible, brand-consistent focus states */
   :focus-visible {
-    outline: 2px solid #f5a524;
+    outline: 2px solid rgb(var(--accent));
     outline-offset: 3px;
     border-radius: 2px;
   }
@@ -44,10 +56,10 @@
 
 @layer components {
   .eyebrow {
-    @apply text-eyebrow uppercase font-display font-semibold text-amber-deep;
+    @apply text-eyebrow uppercase font-display font-semibold text-accent-deep;
   }
   .eyebrow-light {
-    @apply text-eyebrow uppercase font-display font-semibold text-amber;
+    @apply text-eyebrow uppercase font-display font-semibold text-accent;
   }
 
   /* Thin uppercase data label */

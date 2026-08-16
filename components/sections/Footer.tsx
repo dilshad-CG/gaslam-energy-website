@@ -12,7 +12,7 @@ export function Footer() {
             <Logo variant="dark" />
             <p className="mt-6 font-display text-2xl font-medium leading-tight text-bone">
               Power On.<br />
-              <span className="text-amber">Every Hour.</span>
+              <span className="text-accent">Every Hour.</span>
             </p>
             <p className="mt-5 text-small text-bone/55">{site.description}</p>
           </div>
@@ -24,7 +24,7 @@ export function Footer() {
                 <li key={item.label}>
                   <Link
                     href={item.href}
-                    className="text-small text-bone/75 transition-colors hover:text-amber"
+                    className="text-small text-bone/75 transition-colors hover:text-accent"
                   >
                     {item.label}
                   </Link>
@@ -42,22 +42,22 @@ export function Footer() {
               </div>
               <div>
                 <span className="block text-bone/45 text-caption uppercase tracking-wider">Phone</span>
-                <a href={site.phoneHref} className="link-underline transition-colors hover:text-amber">
+                <a href={site.phoneHref} className="link-underline transition-colors hover:text-accent">
                   {site.phone}
                 </a>
                 <span className="mx-2 text-bone/30">·</span>
-                <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" className="link-underline transition-colors hover:text-amber">
+                <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" className="link-underline transition-colors hover:text-accent">
                   WhatsApp
                 </a>
               </div>
               <div>
                 <span className="block text-bone/45 text-caption uppercase tracking-wider">Web</span>
-                <a href={site.url} className="link-underline transition-colors hover:text-amber">
+                <a href={site.url} className="link-underline transition-colors hover:text-accent">
                   {site.domain}
                 </a>
               </div>
               <div>
-                <Link href="/contact" className="inline-flex items-center gap-2 font-display font-semibold text-amber">
+                <Link href="/contact" className="inline-flex items-center gap-2 font-display font-semibold text-accent">
                   Request a Solution <span aria-hidden>→</span>
                 </Link>
               </div>

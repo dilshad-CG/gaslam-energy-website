@@ -37,12 +37,12 @@ export function Hero() {
 
       <motion.div style={{ y: textY, opacity: fade }} className="container relative flex h-full flex-col justify-end pb-[10vh] pt-28">
         <div className="flex items-center gap-3">
-          <span className="h-px w-10 bg-amber" />
+          <span className="h-px w-10 bg-accent" />
           <span className="eyebrow-light">South African Energy Solutions Provider</span>
         </div>
 
         <h1 className="mt-6 max-w-5xl text-display uppercase text-bone">
-          Power On. <span className="text-amber">Every Hour.</span>
+          Power On. <span className="text-accent">Every Hour.</span>
         </h1>
 
         <p className="mt-7 max-w-xl text-body-lg text-bone/70">
@@ -67,7 +67,7 @@ export function Hero() {
         <motion.span
           animate={reduce ? undefined : { y: [0, 6, 0] }}
           transition={{ duration: 1.8, repeat: Infinity, ease: "easeInOut" }}
-          className="block h-8 w-px bg-gradient-to-b from-amber to-transparent"
+          className="block h-8 w-px bg-gradient-to-b from-accent to-transparent"
         />
       </motion.div>
     </section>

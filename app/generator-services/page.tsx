@@ -85,7 +85,7 @@ export default function GeneratorServicesPage() {
 function FactBand({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex items-baseline gap-4">
-      <span className="data-label shrink-0 text-amber-deep">{label}</span>
+      <span className="data-label shrink-0 text-accent-deep">{label}</span>
       <span className="font-display text-[1.05rem] font-medium text-ink">{value}</span>
     </div>
   );

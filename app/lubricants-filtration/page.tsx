@@ -17,7 +17,8 @@ const packSizes = ["Bulk", "210 L", "20 L", "5 L"];
 
 export default function LubricantsPage() {
   return (
-    <>
+    // Division B carries the green brand accent across the whole page.
+    <div className="theme-green">
       <PageHeader
         eyebrow="Division B · Lubricants & Filtration"
         title="The right product, in the right pack, before you need it."
@@ -75,7 +76,7 @@ export default function LubricantsPage() {
                 <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4">
                   {packSizes.map((p) => (
                     <div key={p} className="rounded-card border border-white/10 bg-ink px-4 py-5 text-center">
-                      <span className="font-display text-xl font-bold text-amber">{p}</span>
+                      <span className="font-display text-xl font-bold text-accent">{p}</span>
                     </div>
                   ))}
                 </div>
@@ -95,6 +96,6 @@ export default function LubricantsPage() {
         headline="Secure your supply."
         body="Tell us your equipment and volumes. We'll set up product, sampling and a stock plan that keeps you covered."
       />
-    </>
+    </div>
   );
 }

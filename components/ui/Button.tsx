@@ -14,9 +14,9 @@ const base =
 // Note: no base text-color on secondary/ghost — colour is inherited or set via
 // className, to avoid Tailwind text-utility conflicts (e.g. text-current vs text-bone).
 const variants: Record<Variant, string> = {
-  primary: "bg-amber text-ink hover:bg-amber-bright",
+  primary: "bg-accent text-ink hover:bg-accent-bright",
   secondary: "bg-transparent ring-1 ring-inset ring-current/40 hover:ring-current/80",
-  ghost: "bg-transparent hover:text-amber-bright",
+  ghost: "bg-transparent hover:text-accent-bright",
 };
 
 export function Button({

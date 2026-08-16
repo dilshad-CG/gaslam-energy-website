@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { StaggerItem } from "./motion";
 
-/** Service line item — bordered, amber rule reveal on hover. */
+/** Service line item — bordered, accent rule reveal on hover. */
 export function ServiceCard({
   title,
   body,
@@ -15,14 +15,14 @@ export function ServiceCard({
 }) {
   const surface =
     tone === "dark"
-      ? "border-white/10 bg-carbon hover:border-amber/40"
-      : "border-[#e5e0d5] bg-paper hover:border-amber/60";
+      ? "border-white/10 bg-carbon hover:border-accent/40"
+      : "border-[#e5e0d5] bg-paper hover:border-accent/60";
   const titleColor = tone === "dark" ? "text-bone" : "text-ink";
   const bodyColor = tone === "dark" ? "text-bone/60" : "text-slate";
   return (
     <StaggerItem className={`group relative flex flex-col rounded-card border p-6 transition-all duration-500 ease-out-expo hover:-translate-y-1 ${surface}`}>
-      <span aria-hidden className="absolute left-0 top-6 h-0 w-[3px] bg-amber transition-all duration-500 ease-out-expo group-hover:h-8" />
-      {index && <span className="mb-4 font-display text-caption tabular-nums text-amber-deep">{index}</span>}
+      <span aria-hidden className="absolute left-0 top-6 h-0 w-[3px] bg-accent transition-all duration-500 ease-out-expo group-hover:h-8" />
+      {index && <span className="mb-4 font-display text-caption tabular-nums text-accent-deep">{index}</span>}
       <h3 className={`text-h3 ${titleColor}`}>{title}</h3>
       <p className={`mt-2.5 text-body ${bodyColor}`}>{body}</p>
     </StaggerItem>
@@ -39,9 +39,9 @@ export function IndustryCard({
   tag: string;
 }) {
   return (
-    <StaggerItem className="group relative flex min-h-[280px] flex-col justify-between overflow-hidden rounded-card border border-white/10 bg-carbon p-7 transition-all duration-500 ease-out-expo hover:border-amber/40 hover:-translate-y-1">
-      <div aria-hidden className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-amber/5 blur-2xl transition-opacity duration-500 group-hover:opacity-100 opacity-0" />
-      <span className="inline-flex w-fit items-center gap-2 rounded-pill border border-amber/30 px-3 py-1 text-caption uppercase tracking-wider text-amber">
+    <StaggerItem className="group relative flex min-h-[280px] flex-col justify-between overflow-hidden rounded-card border border-white/10 bg-carbon p-7 transition-all duration-500 ease-out-expo hover:border-accent/40 hover:-translate-y-1">
+      <div aria-hidden className="pointer-events-none absolute -right-16 -top-16 h-40 w-40 rounded-full bg-accent/5 blur-2xl transition-opacity duration-500 group-hover:opacity-100 opacity-0" />
+      <span className="inline-flex w-fit items-center gap-2 rounded-pill border border-accent/30 px-3 py-1 text-caption uppercase tracking-wider text-accent">
         {tag}
       </span>
       <div>
@@ -92,8 +92,8 @@ export function ComplianceBadge({
   icon: React.ReactNode;
 }) {
   return (
-    <StaggerItem className="group flex gap-5 rounded-card border border-white/10 bg-carbon p-6 transition-colors duration-500 hover:border-amber/40">
-      <div className="grid h-12 w-12 shrink-0 place-items-center rounded-[5px] bg-amber/10 text-amber ring-1 ring-inset ring-amber/20">
+    <StaggerItem className="group flex gap-5 rounded-card border border-white/10 bg-carbon p-6 transition-colors duration-500 hover:border-accent/40">
+      <div className="grid h-12 w-12 shrink-0 place-items-center rounded-[5px] bg-accent/10 text-accent ring-1 ring-inset ring-accent/20">
         {icon}
       </div>
       <div>
@@ -118,14 +118,14 @@ export function LinkCard({
   return (
     <Link
       href={href}
-      className="group relative flex flex-col justify-between overflow-hidden rounded-card border border-white/10 bg-carbon p-8 transition-all duration-500 ease-out-expo hover:border-amber/40 hover:-translate-y-1"
+      className="group relative flex flex-col justify-between overflow-hidden rounded-card border border-white/10 bg-carbon p-8 transition-all duration-500 ease-out-expo hover:border-accent/40 hover:-translate-y-1"
     >
       <div>
         <span className="eyebrow-light">{eyebrow}</span>
         <h3 className="mt-4 text-h2 text-bone">{title}</h3>
         <p className="mt-3 max-w-md text-body text-bone/60">{body}</p>
       </div>
-      <span className="mt-8 inline-flex items-center gap-2 font-display font-semibold text-amber">
+      <span className="mt-8 inline-flex items-center gap-2 font-display font-semibold text-accent">
         Explore <span className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden>→</span>
       </span>
     </Link>

@@ -8,7 +8,7 @@ export default function NotFound() {
     <section className="relative flex min-h-[100svh] items-center overflow-hidden bg-ink text-bone">
       <Container>
         <div className="relative max-w-2xl py-32">
-          <span className="font-display text-[clamp(5rem,18vw,12rem)] font-bold leading-none tabular-nums text-amber">
+          <span className="font-display text-[clamp(5rem,18vw,12rem)] font-bold leading-none tabular-nums text-accent">
             404
           </span>
           <h1 className="mt-4 text-h2 uppercase text-bone">This page is off the grid.</h1>
@@ -24,7 +24,7 @@ export default function NotFound() {
           </div>
           <div className="mt-12 flex flex-wrap gap-x-6 gap-y-2 border-t border-white/10 pt-6">
             {nav.map((item) => (
-              <Link key={item.label} href={item.href} className="text-small text-bone/55 transition-colors hover:text-amber">
+              <Link key={item.label} href={item.href} className="text-small text-bone/55 transition-colors hover:text-accent">
                 {item.label}
               </Link>
             ))}

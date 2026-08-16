@@ -7,7 +7,7 @@ import { serviceOptions, industryOptions } from "@/lib/site";
 type Status = "idle" | "submitting" | "success" | "error";
 
 const inputBase =
-  "w-full rounded-[4px] border border-[#d9d3c6] bg-paper px-4 py-3 text-body text-ink placeholder:text-slate/50 transition-colors focus:border-amber focus:outline-none focus:ring-2 focus:ring-amber/30";
+  "w-full rounded-[4px] border border-[#d9d3c6] bg-paper px-4 py-3 text-body text-ink placeholder:text-slate/50 transition-colors focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/30";
 const labelBase = "mb-1.5 block text-small font-medium text-ink";
 
 export function ContactForm() {
@@ -44,7 +44,7 @@ export function ContactForm() {
             animate={{ opacity: 1, y: 0 }}
             className="flex min-h-[420px] flex-col items-center justify-center text-center"
           >
-            <div className="grid h-14 w-14 place-items-center rounded-full bg-amber text-ink">
+            <div className="grid h-14 w-14 place-items-center rounded-full bg-accent text-ink">
               <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                 <path d="M20 6 9 17l-5-5" />
               </svg>
@@ -56,7 +56,7 @@ export function ContactForm() {
             </p>
             <button
               onClick={() => setStatus("idle")}
-              className="mt-8 font-display font-semibold text-amber-deep underline-offset-4 hover:underline"
+              className="mt-8 font-display font-semibold text-accent-deep underline-offset-4 hover:underline"
             >
               Send another request
             </button>
@@ -143,7 +143,7 @@ function Field({
     <div>
       <label htmlFor={name} className={labelBase}>
         {label} {optional && <span className="text-slate/60">(optional)</span>}
-        {required && <span className="text-amber-deep"> *</span>}
+        {required && <span className="text-accent-deep"> *</span>}
       </label>
       <input
         id={name}

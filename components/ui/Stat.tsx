@@ -41,9 +41,9 @@ export function Stat({
   return (
     <div className="flex flex-col gap-2">
       <div className={`font-display font-bold tracking-tight tabular-nums text-[clamp(2.5rem,5vw,3.75rem)] leading-none ${numColor}`}>
-        <span className="text-amber">{prefix}</span>
+        <span className="text-accent">{prefix}</span>
         {isYear ? value : display}
-        <span className="text-amber">{suffix}</span>
+        <span className="text-accent">{suffix}</span>
       </div>
       <div className={`data-label ${labelColor}`}>{label}</div>
     </div>

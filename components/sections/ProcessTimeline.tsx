@@ -28,7 +28,7 @@ export function ProcessTimeline() {
           {/* Spine */}
           <div className="absolute left-[7px] top-2 h-[calc(100%-1rem)] w-px bg-white/10 sm:left-1/2 sm:-translate-x-1/2" aria-hidden>
             <motion.div
-              className="absolute inset-x-0 top-0 w-full origin-top bg-amber"
+              className="absolute inset-x-0 top-0 w-full origin-top bg-accent"
               style={{ scaleY: reduce ? 1 : scaleY, height: "100%" }}
             />
           </div>
@@ -45,14 +45,14 @@ export function ProcessTimeline() {
                 >
                   {/* Node */}
                   <span
-                    className="absolute left-[-25px] top-1.5 z-10 grid h-4 w-4 place-items-center rounded-full bg-ink ring-2 ring-amber sm:left-1/2 sm:top-10 sm:-translate-x-1/2"
+                    className="absolute left-[-25px] top-1.5 z-10 grid h-4 w-4 place-items-center rounded-full bg-ink ring-2 ring-accent sm:left-1/2 sm:top-10 sm:-translate-x-1/2"
                     aria-hidden
                   >
-                    <span className="h-1.5 w-1.5 rounded-full bg-amber" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                   </span>
 
                   <div className={`${left ? "sm:pr-12 sm:text-right" : "sm:col-start-2 sm:pl-12"}`}>
-                    <span className="font-display text-[2.5rem] font-bold leading-none tabular-nums text-amber/25">
+                    <span className="font-display text-[2.5rem] font-bold leading-none tabular-nums text-accent/25">
                       {step.n}
                     </span>
                     <h3 className="mt-2 text-h3 text-bone">{step.title}</h3>

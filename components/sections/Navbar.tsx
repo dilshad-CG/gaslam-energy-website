@@ -85,7 +85,7 @@ export function Navbar() {
                           >
                             <span className="flex items-center gap-2 font-display text-[0.95rem] font-semibold text-ink">
                               {c.label}
-                              <span className="text-amber-deep opacity-0 transition-opacity group-hover:opacity-100" aria-hidden>→</span>
+                              <span className="text-accent-deep opacity-0 transition-opacity group-hover:opacity-100" aria-hidden>→</span>
                             </span>
                             <span className="text-caption text-slate">{c.desc}</span>
                           </Link>

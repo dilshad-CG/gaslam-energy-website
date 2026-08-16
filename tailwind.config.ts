@@ -29,6 +29,12 @@ const config: Config = {
         // Light surfaces
         bone: "#F4F1EB",
         paper: "#FBFAF8",
+        // Themeable accent — resolves to amber by default, green under .theme-green
+        accent: {
+          DEFAULT: "rgb(var(--accent) / <alpha-value>)",
+          bright: "rgb(var(--accent-bright) / <alpha-value>)",
+          deep: "rgb(var(--accent-deep) / <alpha-value>)",
+        },
         // Energy accent — the Gas'Lam bolt (amber/orange)
         amber: {
           DEFAULT: "#F5A524",

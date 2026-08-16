@@ -13,7 +13,7 @@ export function CTA({
     <section className="relative overflow-hidden bg-ink py-section text-bone">
       <div
         aria-hidden
-        className="pointer-events-none absolute -bottom-40 left-1/2 h-96 w-[120%] -translate-x-1/2 rounded-[100%] bg-amber/10 blur-3xl"
+        className="pointer-events-none absolute -bottom-40 left-1/2 h-96 w-[120%] -translate-x-1/2 rounded-[100%] bg-accent/10 blur-3xl"
       />
       <div className="container relative">
         <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
