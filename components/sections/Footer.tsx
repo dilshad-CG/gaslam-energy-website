@@ -1,11 +1,15 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Logo } from "@/components/ui/Logo";
-import { nav, site } from "@/lib/site";
+import { nav, site, routeThemeClass } from "@/lib/site";
 
 export function Footer() {
   const year = new Date().getFullYear();
+  const theme = routeThemeClass(usePathname());
   return (
-    <footer className="relative bg-ink text-bone">
+    <footer className={`${theme} relative bg-ink text-bone`}>
       <div className="container relative py-16">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr]">
           <div className="max-w-sm">

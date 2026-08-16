@@ -44,6 +44,16 @@ export const deploy = {
   },
 };
 
+/**
+ * Accent theme for a route. Division pages carry their colour; everything else is
+ * the default amber. Used by the global nav/footer so chrome matches the page.
+ */
+export function routeThemeClass(pathname: string | null | undefined): string {
+  if (!pathname) return "";
+  if (pathname.startsWith("/lubricants-filtration")) return "theme-green";
+  return "";
+}
+
 export const nav = [
   {
     label: "Solutions",

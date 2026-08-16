@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Logo } from "@/components/ui/Logo";
 import { Button } from "@/components/ui/Button";
-import { nav } from "@/lib/site";
+import { nav, routeThemeClass } from "@/lib/site";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -34,10 +34,11 @@ export function Navbar() {
   }, [open]);
 
   const solid = scrolled || open;
+  const theme = routeThemeClass(pathname);
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-out-expo ${
+      className={`${theme} fixed inset-x-0 top-0 z-50 transition-all duration-500 ease-out-expo ${
         solid
           ? "bg-bone/90 backdrop-blur-md border-b rule-light shadow-[0_1px_0_rgba(0,0,0,0.02)]"
           : "bg-transparent border-b border-transparent"
