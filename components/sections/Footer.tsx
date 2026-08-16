@@ -6,7 +6,6 @@ export function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="relative bg-ink text-bone">
-      <div className="grid-lines absolute inset-0 opacity-40" aria-hidden />
       <div className="container relative py-16">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr]">
           <div className="max-w-sm">

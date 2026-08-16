@@ -1,6 +1,5 @@
 import { ImageResponse } from "next/og";
 
-export const runtime = "edge";
 export const alt = "Gas'Lam Energy Group — Power On. Every Hour.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
@@ -18,9 +17,6 @@ export default function OpengraphImage() {
           background: "#0C0F14",
           padding: "72px",
           fontFamily: "sans-serif",
-          backgroundImage:
-            "linear-gradient(rgba(244,241,235,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(244,241,235,0.06) 1px, transparent 1px)",
-          backgroundSize: "72px 72px",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>

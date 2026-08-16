@@ -34,7 +34,6 @@ export function Hero() {
       </motion.div>
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/40" aria-hidden />
       <div className="absolute inset-0 bg-gradient-to-r from-ink/85 via-ink/30 to-transparent" aria-hidden />
-      <div className="grid-lines absolute inset-0 opacity-30" aria-hidden />
 
       <motion.div style={{ y: textY, opacity: fade }} className="container relative flex h-full flex-col justify-end pb-[10vh] pt-28">
         <div className="flex items-center gap-3">

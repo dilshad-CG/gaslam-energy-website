@@ -6,7 +6,6 @@ import { nav } from "@/lib/site";
 export default function NotFound() {
   return (
     <section className="relative flex min-h-[100svh] items-center overflow-hidden bg-ink text-bone">
-      <div className="grid-lines absolute inset-0 opacity-30" aria-hidden />
       <Container>
         <div className="relative max-w-2xl py-32">
           <span className="font-display text-[clamp(5rem,18vw,12rem)] font-bold leading-none tabular-nums text-amber">

@@ -11,7 +11,6 @@ export function CTA({
 }) {
   return (
     <section className="relative overflow-hidden bg-ink py-section text-bone">
-      <div className="grid-lines absolute inset-0 opacity-50" aria-hidden />
       <div
         aria-hidden
         className="pointer-events-none absolute -bottom-40 left-1/2 h-96 w-[120%] -translate-x-1/2 rounded-[100%] bg-amber/10 blur-3xl"

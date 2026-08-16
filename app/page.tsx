@@ -272,7 +272,6 @@ function SafetyScaleSection() {
           </div>
 
           <div className="relative overflow-hidden rounded-card border border-white/10 bg-navy-deep p-8 lg:p-10">
-            <div className="grid-lines absolute inset-0 opacity-30" aria-hidden />
             <div className="relative">
               <Eyebrow tone="dark" className="mb-6">National capability</Eyebrow>
               <h2 className="text-h2 uppercase text-bone">Local expertise. National reach.</h2>

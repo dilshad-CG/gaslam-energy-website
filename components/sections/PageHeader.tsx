@@ -25,7 +25,6 @@ export function PageHeader({
           <div className="absolute inset-0 bg-gradient-to-r from-ink/90 to-transparent" />
         </div>
       )}
-      <div className="grid-lines absolute inset-0 opacity-25" aria-hidden />
       <Container>
         <div className="relative max-w-3xl">
           <Eyebrow tone="dark" className="mb-6">{eyebrow}</Eyebrow>

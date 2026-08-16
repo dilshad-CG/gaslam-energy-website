@@ -3,7 +3,7 @@ import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
-import { site } from "@/lib/site";
+import { site, deploy } from "@/lib/site";
 
 const display = Space_Grotesk({
   subsets: ["latin"],
@@ -23,7 +23,7 @@ const description =
   "Reliable, compliant mobile power for operations that can't stop. Generator rental, refuelling, maintenance and lubricants & filtration across South Africa. Power On. Every Hour.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(site.url),
+  metadataBase: new URL(deploy.origin),
   title: {
     default: title,
     template: "%s — Gas'Lam Energy Group",
@@ -45,18 +45,18 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_ZA",
-    url: site.url,
+    url: `${deploy.url}/`,
     siteName: site.name,
     title,
     description,
-    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: site.name }],
+    // OG image is injected automatically by app/opengraph-image.tsx (basePath-aware).
   },
   twitter: {
     card: "summary_large_image",
     title,
     description,
   },
-  alternates: { canonical: site.url },
+  alternates: { canonical: `${deploy.url}/` },
   robots: { index: true, follow: true },
 };
 

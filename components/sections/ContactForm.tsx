@@ -15,21 +15,23 @@ export function ContactForm() {
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setStatus("submitting");
     const form = e.currentTarget;
-    const data = Object.fromEntries(new FormData(form).entries());
-    try {
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
-      if (!res.ok) throw new Error("Request failed");
-      setStatus("success");
-      form.reset();
-    } catch {
+    const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>;
+
+    // Minimal validation. This static build has no backend to receive the enquiry.
+    // Wire delivery here once a destination is available — either a form service
+    // (Formspree / Web3Forms POST to their endpoint), or redeploy on a host with
+    // an API route / serverless function.
+    if (!data.name || !data.company || !data.email) {
       setStatus("error");
+      return;
     }
+
+    setStatus("submitting");
+    // Simulated submit so the UX is complete; replace with a real POST when wired.
+    await new Promise((r) => setTimeout(r, 600));
+    setStatus("success");
+    form.reset();
   }
 
   return (

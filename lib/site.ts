@@ -28,6 +28,19 @@ export const site = {
     "To become a leading integrated energy solutions partner in Sub-Saharan Africa, enabling businesses to thrive without power interruption.",
 };
 
+/**
+ * Where the site is actually served. Currently GitHub Pages (project subpath).
+ * When the custom domain gaslamenergy.co.za is connected, set origin to
+ * "https://www.gaslamenergy.co.za" and basePath to "".
+ */
+export const deploy = {
+  origin: "https://dilshad-cg.github.io",
+  basePath: "/gaslam-energy-website",
+  get url() {
+    return `${this.origin}${this.basePath}`;
+  },
+};
+
 export const nav = [
   {
     label: "Solutions",
@@ -171,14 +184,20 @@ export const serviceOptions = [
 
 export const industryOptions = ["Corporate", "Telecommunications", "Industrial", "Other"];
 
-/** Placeholder photography — swap the paths for real Gas'Lam assets when available. */
+/**
+ * Placeholder photography — swap the files in /public/images for real Gas'Lam assets.
+ * Paths carry the deploy basePath because next/image with `unoptimized` does not
+ * prepend it automatically. When basePath is "" (custom domain) these resolve to /images/...
+ */
+const asset = (p: string) => `${deploy.basePath}${p}`;
+
 export const images = {
-  heroGenerator: "/images/hero-generator.jpg",
-  fleet: "/images/generator-fleet.jpg",
-  engineer: "/images/engineer.jpg",
-  telecom: "/images/telecom-site.jpg",
-  lubricants: "/images/lubricants.jpg",
-  industrial: "/images/industrial-facility.jpg",
-  maintenance: "/images/maintenance.jpg",
-  control: "/images/control.jpg",
+  heroGenerator: asset("/images/hero-generator.jpg"),
+  fleet: asset("/images/generator-fleet.jpg"),
+  engineer: asset("/images/engineer.jpg"),
+  telecom: asset("/images/telecom-site.jpg"),
+  lubricants: asset("/images/lubricants.jpg"),
+  industrial: asset("/images/industrial-facility.jpg"),
+  maintenance: asset("/images/maintenance.jpg"),
+  control: asset("/images/control.jpg"),
 };

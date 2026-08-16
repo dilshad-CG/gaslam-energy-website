@@ -57,17 +57,28 @@ the same filenames (or update the paths) and the whole site updates.
 
 ## Contact form
 
-`components/sections/ContactForm.tsx` posts to `app/api/contact/route.ts`, which
-validates the enquiry and returns success. **Delivery is not yet wired** — connect
-the marked `TODO` in the route to email (Resend/SendGrid), a CRM, or a Slack webhook
-once a destination address is provided.
+`components/sections/ContactForm.tsx` validates client-side and shows a success
+state. Because this is a **static export** (no server), delivery isn't wired yet.
+To make it send: POST to a form service (Formspree / Web3Forms) inside
+`handleSubmit`, or redeploy on a host with a serverless function.
 
-## Deployment (Vercel)
+## Deployment (GitHub Pages — static export)
 
-1. Push this repo to GitHub.
-2. In Vercel, **Add New → Project** and import the repo.
-3. Framework preset auto-detects **Next.js** — no config needed.
-4. Deploy. Add the custom domain `gaslamenergy.co.za` under Project → Domains.
+The site builds to a fully static `out/` folder (`output: "export"`) and deploys
+via GitHub Actions (`.github/workflows/deploy.yml`) on every push to `main`.
+
+- **Live at:** `https://dilshad-cg.github.io/gaslam-energy-website/`
+- Repo → **Settings → Pages → Source: GitHub Actions** (one-time).
+- The project is served under the `/gaslam-energy-website` subpath. `basePath`,
+  `assetPrefix`, image paths and metadata all read from `deploy` in `lib/site.ts`.
+
+### Moving to the custom domain `gaslamenergy.co.za`
+
+1. In `lib/site.ts`, set `deploy.origin` to `https://www.gaslamenergy.co.za` and
+   `deploy.basePath` to `""`.
+2. Add a `public/CNAME` file containing `www.gaslamenergy.co.za`.
+3. Point the domain's DNS at GitHub Pages and set the custom domain under
+   **Settings → Pages**.
 
 ## Accessibility & performance
 
