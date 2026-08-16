@@ -1,9 +1,11 @@
 import Link from "next/link";
+import Image from "next/image";
+import { brand } from "@/lib/site";
 
 /**
- * Gas'Lam wordmark. A geometric bolt monogram (amber energy + green whisper from
- * the brand identity) paired with the wordmark. Vector so it stays crisp and is a
- * clean stand-in until the official logo files are supplied.
+ * Gas'Lam logo — the official flame-"G" + bolt mark (green/amber, transparent PNG)
+ * paired with a theme-aware wordmark so it stays legible on both dark and light
+ * navigation. The mark colour is fixed brand; only the wordmark switches.
  */
 export function Logo({
   variant = "light",
@@ -21,7 +23,14 @@ export function Logo({
       aria-label="Gas'Lam Energy Group — home"
       className={`group inline-flex items-center gap-2.5 ${className}`}
     >
-      <BoltMark />
+      <Image
+        src={brand.icon}
+        alt=""
+        width={184}
+        height={129}
+        priority
+        className="h-9 w-auto transition-transform duration-500 ease-out-expo group-hover:scale-[1.05]"
+      />
       <span className="flex flex-col leading-none">
         <span className={`font-display font-bold tracking-tight text-[1.02rem] ${wordColor}`}>
           GAS&rsquo;LAM
@@ -31,29 +40,5 @@ export function Logo({
         </span>
       </span>
     </Link>
-  );
-}
-
-function BoltMark() {
-  return (
-    <span className="relative grid h-9 w-9 place-items-center rounded-[5px] bg-ink ring-1 ring-inset ring-white/10 overflow-hidden transition-transform duration-500 ease-out-expo group-hover:scale-[1.04]">
-      <span className="absolute inset-0 bg-gradient-to-br from-moss/25 via-transparent to-amber/25" />
-      <svg
-        viewBox="0 0 24 24"
-        className="relative h-5 w-5"
-        fill="none"
-        aria-hidden="true"
-      >
-        <path
-          d="M13.5 2 5 13.2h5.2L9.2 22 19 9.8h-5.4L13.5 2Z"
-          fill="#F5A524"
-        />
-        <path
-          d="M13.5 2 5 13.2h5.2L9.2 22 19 9.8h-5.4L13.5 2Z"
-          stroke="#FFB93D"
-          strokeWidth="0.4"
-        />
-      </svg>
-    </span>
   );
 }

@@ -17,8 +17,11 @@ export const site = {
     city: "Randburg",
     province: "Gauteng",
   },
-  // The profile only lists a placeholder number (+123-456-7890). We do not publish it.
-  phone: null as string | null,
+  phone: "+27 67 536 9408",
+  phoneHref: "tel:+27675369408",
+  whatsapp: "https://wa.me/27675369408",
+  whatsappPrefill:
+    "https://wa.me/27675369408?text=Hi%20Gas%27Lam%2C%20I%27d%20like%20to%20discuss%20a%20power%20solution.",
   email: null as string | null,
   description:
     "South African energy solutions provider specialising in mobile power generation, fuel management, and lubricants & filtration.",
@@ -190,6 +193,11 @@ export const industryOptions = ["Corporate", "Telecommunications", "Industrial",
  * prepend it automatically. When basePath is "" (custom domain) these resolve to /images/...
  */
 const asset = (p: string) => `${deploy.basePath}${p}`;
+
+export const brand = {
+  icon: asset("/brand/gaslam-icon.png"),
+  logoFull: asset("/brand/gaslam-logo-full.png"),
+};
 
 export const images = {
   heroGenerator: asset("/images/hero-generator.jpg"),

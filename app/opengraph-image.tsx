@@ -1,8 +1,15 @@
 import { ImageResponse } from "next/og";
+import { readFileSync } from "fs";
+import { join } from "path";
 
 export const alt = "Gas'Lam Energy Group — Power On. Every Hour.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
+
+// Read the real logo mark at build time and inline it as a data URI.
+const markData = `data:image/png;base64,${readFileSync(
+  join(process.cwd(), "public/brand/gaslam-icon.png")
+).toString("base64")}`;
 
 export default function OpengraphImage() {
   return new ImageResponse(
@@ -20,22 +27,8 @@ export default function OpengraphImage() {
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
-          <div
-            style={{
-              width: 56,
-              height: 56,
-              borderRadius: 8,
-              background: "#14181F",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              border: "1px solid rgba(255,255,255,0.1)",
-            }}
-          >
-            <svg width="30" height="30" viewBox="0 0 24 24" fill="none">
-              <path d="M13.5 2 5 13.2h5.2L9.2 22 19 9.8h-5.4L13.5 2Z" fill="#F5A524" />
-            </svg>
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={markData} width={64} height={45} alt="" />
           <div style={{ display: "flex", flexDirection: "column", color: "#F4F1EB" }}>
             <span style={{ fontSize: 26, fontWeight: 700, letterSpacing: "-0.02em" }}>GAS&#39;LAM</span>
             <span style={{ fontSize: 13, letterSpacing: "0.2em", color: "rgba(244,241,235,0.55)" }}>ENERGY GROUP</span>

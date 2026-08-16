@@ -3,6 +3,7 @@ import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/sections/Navbar";
 import { Footer } from "@/components/sections/Footer";
+import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 import { site, deploy } from "@/lib/site";
 
 const display = Space_Grotesk({
@@ -75,6 +76,14 @@ const orgJsonLd = {
   description: site.description,
   slogan: site.tagline,
   areaServed: "ZA",
+  telephone: site.phone,
+  contactPoint: {
+    "@type": "ContactPoint",
+    telephone: site.phone,
+    contactType: "sales",
+    areaServed: "ZA",
+    availableLanguage: "en",
+  },
   address: {
     "@type": "PostalAddress",
     streetAddress: "5 1st Ave, Bordeaux",
@@ -103,6 +112,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
         <main id="main">{children}</main>
         <Footer />
+        <WhatsAppButton />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}

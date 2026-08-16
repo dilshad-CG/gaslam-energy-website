@@ -45,7 +45,9 @@ export function IndustryCard({
         {tag}
       </span>
       <div>
-        <h3 className="text-h2 text-bone">{title}</h3>
+        <h3 className="font-display font-bold tracking-tight leading-[1.05] text-[clamp(1.5rem,1rem+1.8vw,2rem)] [overflow-wrap:anywhere] text-bone">
+          {title}
+        </h3>
         <p className="mt-3 max-w-sm text-body text-bone/60">{body}</p>
       </div>
     </StaggerItem>

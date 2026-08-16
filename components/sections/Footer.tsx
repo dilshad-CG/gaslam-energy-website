@@ -41,6 +41,16 @@ export function Footer() {
                 {site.hq.line}
               </div>
               <div>
+                <span className="block text-bone/45 text-caption uppercase tracking-wider">Phone</span>
+                <a href={site.phoneHref} className="link-underline transition-colors hover:text-amber">
+                  {site.phone}
+                </a>
+                <span className="mx-2 text-bone/30">·</span>
+                <a href={site.whatsapp} target="_blank" rel="noopener noreferrer" className="link-underline transition-colors hover:text-amber">
+                  WhatsApp
+                </a>
+              </div>
+              <div>
                 <span className="block text-bone/45 text-caption uppercase tracking-wider">Web</span>
                 <a href={site.url} className="link-underline transition-colors hover:text-amber">
                   {site.domain}
