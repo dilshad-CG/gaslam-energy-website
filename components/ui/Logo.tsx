@@ -22,12 +22,12 @@ export function Logo({
       aria-label="Gas'Lam Energy Group — home"
       className={`group inline-flex items-center gap-2.5 ${className}`}
     >
-      {/* Vector mark — crisp at any size. eslint-disable-next-line @next/next/no-img-element */}
+      {/* Official Gas'Lam mark. eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src={brand.iconSvg}
+        src={brand.icon}
         alt=""
-        width={51}
-        height={36}
+        width={552}
+        height={387}
         className="h-9 w-auto transition-transform duration-500 ease-out-expo group-hover:scale-[1.05]"
       />
       <span className="flex flex-col leading-none">
